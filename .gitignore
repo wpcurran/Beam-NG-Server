@@ -1,0 +1,12 @@
+#keeps mod file but ignores mods added locally to folder
+mods/*
+!mods/.gitkeep
+
+#ignores authkey
+echo "AUTHKEY" >> .gitignore
+
+*.log
+*.tar
+*.zip
+__pycache__/
+.env

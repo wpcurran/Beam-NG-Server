@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  beammp:
+    build: .
+    container_name: beammp-server
+    ports:
+      - "30814:30814/tcp"
+      - "30814:30814/udp"
+    volumes:
+      - ./mods:/server/Resources
+      - ./ServerConfig.toml:/server/ServerConfig.toml
+      - ./AUTHKEY:/server/AUTHKEY:ro
+    restart: unless-stopped
+    cpuset: "2-5"
+    deploy:
+      resources:
+        limits:
+          cpus: '4.00'
+          memory: 8g
+        reservations:
+          cpus: '2.00'
+          memory: 4g

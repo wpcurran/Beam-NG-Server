@@ -1,0 +1,7 @@
+[General]
+Name     = "Beam Server"
+Port     = 30814
+AuthKey  = "PLACEHOLDER"
+Map      = "/levels/west_coast_usa/info.json"   
+Private  = false
+MaxPlayers = 12
