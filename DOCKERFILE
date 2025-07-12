@@ -13,3 +13,5 @@ COPY ServerConfig.toml /server/ServerConfig.toml
 RUN chmod +x /server/BeamMP-Server
 
 CMD ["./BeamMP-Server"]
+
+#changed some shit
