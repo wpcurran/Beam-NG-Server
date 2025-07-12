@@ -1,20 +1,15 @@
 FROM ubuntu:22.04
 
 RUN apt-get update && apt-get install -y \
-    wget unzip libcurl4-openssl-dev screen iproute2 && \
+    liblua5.3 \
+    unzip libcurl4-openssl-dev screen iproute2 && \
     apt-get clean
 
 WORKDIR /server
 
-# Download BeamMP Server
-RUN wget https://beammp.com/ServerLinux.zip && \
-    unzip ServerLinux.zip && \
-    rm ServerLinux.zip
+COPY server-bin/BeamMP-Server /server/BeamMP-Server
+COPY ServerConfig.toml /server/ServerConfig.toml
 
-# Copy config and entrypoint
-COPY ServerConfig.toml ./
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /server/BeamMP-Server
 
-# Use entrypoint to securely inject AuthKey and start server
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["./BeamMP-Server"]

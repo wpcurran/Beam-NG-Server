@@ -1,7 +1,7 @@
 [General]
-Name     = "Beam Server"
-Port     = 30814
-AuthKey  = "PLACEHOLDER"
-Map      = "/levels/west_coast_usa/info.json"   
-Private  = false
+Name = "Drunk Drivers Anonymous"
+Port = 30814
+AuthKey = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"  # <- add real key here
+Map = "/levels/gridmap_v2/info.json"
+Private = false
 MaxPlayers = 12

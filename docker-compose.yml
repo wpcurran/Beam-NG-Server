@@ -10,7 +10,7 @@ services:
     volumes:
       - ./mods:/server/Resources
       - ./ServerConfig.toml:/server/ServerConfig.toml
-      - ./AUTHKEY:/server/AUTHKEY:ro
+    
     restart: unless-stopped
     cpuset: "2-5"
     deploy:
