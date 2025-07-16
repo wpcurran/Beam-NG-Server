@@ -1,4 +1,4 @@
-version: '3.8'
+ersion: '3.8'
 
 services:
   beammp:
@@ -8,16 +8,8 @@ services:
       - "30814:30814/tcp"
       - "30814:30814/udp"
     volumes:
-      - ./mods:/server/Resources
       - ./ServerConfig.toml:/server/ServerConfig.toml
-    
+      - ./mods/Client:/server/Resources/Client
+
     restart: unless-stopped
-    cpuset: "2-5"
     deploy:
-      resources:
-        limits:
-          cpus: '4.00'
-          memory: 8g
-        reservations:
-          cpus: '2.00'
-          memory: 4g
